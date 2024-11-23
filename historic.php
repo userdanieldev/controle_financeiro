@@ -108,7 +108,7 @@ if (isset($_GET['id'])) {
                                     <td>R$ <?= number_format($transaction['value'], 2, ',', '.'); ?></td>
                                     <td><?= date('d/m/Y', strtotime($transaction['date'])); ?></td>
                                     <td>
-                                        <a href="edit_transaction.php?id=<?= $transaction['id']; ?>" class="btn btn-outline-warning btn-sm">Editar</a>
+                                    <a href="editar_transacao.php?id=<?= $transaction['id'] /* ?>&month_id=<?= $transaction ['month_id'] */ ?>" class="btn btn-outline-warning btn-sm">Editar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
