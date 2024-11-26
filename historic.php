@@ -47,8 +47,8 @@ if (isset($_GET['id'])) {
         <div class="d-flex justify-content-between align-items-center">
             <h1 class="text-white">Histórico de Transações</h1>
             <div>
-                <a href="index.php" class="btn btn-sm mb-3 btn-secondary me-2">Voltar ao Resumo</a>
-                <a href="criar_transacao.php?id=<?= $month_id ?>" id="openModalButton" class="btn btn-sm mb-3 btn-primary">
+                <a href="index.php" class="btn btn-md mb-3 btn-secondary me-2">Voltar ao Resumo</a>
+                <a href="criar_transacao.php?id=<?= $month_id ?>" id="openModalButton" class="btn btn-md mb-3 btn-primary">
                     Cadastrar Transação
                 </a>
             </div>
@@ -60,19 +60,19 @@ if (isset($_GET['id'])) {
             </div>
             <div class="p-4 row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
-                    <div class="p-3 bg-success text-white rounded-lg shadow-sm">
+                    <div class="p-3 bg-success text-white rounded-lg shadow-sm transition-all duration-300 hover:scale-105">
                         <p class="h5">Total Ganho</p>
                         <p class="h3">R$ <?= number_format($totalIncome, 2, ',', '.') ?></p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-3 bg-danger text-white rounded-lg shadow-sm">
+                    <div class="p-3 bg-danger text-white rounded-lg shadow-sm transition-all duration-300 hover:scale-105">
                         <p class="h5">Total Gasto</p>
                         <p class="h3">R$ <?= number_format($totalExpense, 2, ',', '.') ?></p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-3 bg-info text-white rounded-lg shadow-sm">
+                    <div class="p-3 bg-primary text-white rounded-lg shadow-sm transition-all duration-300 hover:scale-105">
                         <p class="h5">Saldo Final</p>
                         <p class="h3">R$ <?= number_format($finalBalance, 2, ',', '.') ?></p>
                     </div>

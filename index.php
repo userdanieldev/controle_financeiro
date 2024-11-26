@@ -242,10 +242,10 @@ if ($result->num_rows > 0) {
     <footer>
             <hr class="my-4 text-secondary">
             <div class="text-center mb-3">
-                <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-primary me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-info me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" style="color: #dd2a7b;" class="me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-info me-3"><i class="bi bi-linkedin"></i></a>
             </div>
 
             <div class="text-center">
