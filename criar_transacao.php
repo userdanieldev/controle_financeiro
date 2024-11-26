@@ -2,13 +2,16 @@
 session_start();
 require_once('connect.php');
 
-// Verificar o ID do mês
 if (isset($_GET['id'])) {
     $month_id = intval($_GET['id']);
-    // Mapear o número do mês para o intervalo de datas
-    $year = date('Y'); // Pega o ano atual
-    $month_start = "$year-$month_id-01"; // Primeiro dia do mês
-    $month_end = date("Y-m-t", strtotime($month_start)); // Último dia do mês
+    
+    $year = date('Y');
+    
+    $month_id = str_pad($month_id, 2, '0', STR_PAD_LEFT);
+    
+    $month_start = "$year-$month_id-01"; 
+    
+    $month_end = date("Y-m-t", strtotime($month_start)); 
 } else {
     echo "ID do mês não especificado.";
     exit();
@@ -22,29 +25,93 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Transação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212; 
+            color: #e0e0e0; 
+        }
+
+        .card {
+            background-color: #1f1f1f; 
+            border-color: #333333; 
+        }
+
+        .card-header {
+            background-color: #333333; 
+            color: #e0e0e0; 
+        }
+
+        .form-control {
+            background-color: #2a2a2a; 
+            color: #e0e0e0; 
+            border: 1px solid #444444; 
+        }
+
+        .form-control:focus {
+            background-color: #3c3c3c; 
+            border-color: #007bff; 
+            color: #ffffff; 
+        }
+
+        .btn-primary {
+            background-color: #007bff; 
+            border-color: #007bff; 
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; 
+            border-color: #004085; 
+        }
+
+        .btn-secondary {
+            background-color: #6c757d; 
+            border-color: #6c757d; 
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268; 
+            border-color: #545b62; 
+        }
+
+        .text-danger {
+            color: #ff6b6b; 
+        }
+
+        select, input[type="number"], input[type="date"] {
+            background-color: #2a2a2a;
+            border: 1px solid #444444;
+            color: #e0e0e0;
+        }
+
+        select:focus, input[type="number"]:focus, input[type="date"]:focus {
+            background-color: #3c3c3c;
+            border-color: #007bff;
+            color: #ffffff;
+        }
+
+        small {
+            color: #ff6b6b; 
+        }
+    </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Definir limites para o campo de data
-            const startDate = "<?= $month_start ?>"; // Data inicial
-            const endDate = "<?= $month_end ?>"; // Data final
-            const dateField = document.getElementById("txtData"); // Campo de data
-            const form = document.querySelector("form"); // Formulário
-            const errorMsg = document.getElementById("error-msg"); // Mensagem de erro
+            const startDate = "<?= $month_start ?>"; 
+            const endDate = "<?= $month_end ?>"; 
+            const dateField = document.getElementById("txtData"); 
+            const form = document.querySelector("form"); 
+            const errorMsg = document.getElementById("error-msg"); 
 
-            // Configurar os limites no input de data
             dateField.min = startDate;
             dateField.max = endDate;
 
-            // Validar a data no envio do formulário
             form.addEventListener("submit", function (event) {
                 const selectedDate = dateField.value;
 
-                // Verificar se a data está dentro do intervalo
                 if (selectedDate < startDate || selectedDate > endDate) {
-                    event.preventDefault(); // Impede o envio do formulário
+                    event.preventDefault(); 
                     errorMsg.textContent = `A data deve estar entre ${startDate} e ${endDate}.`;
                 } else {
-                    errorMsg.textContent = ""; // Limpa a mensagem de erro
+                    errorMsg.textContent = ""; 
                 }
             });
         });
@@ -66,7 +133,13 @@ if (isset($_GET['id'])) {
                     <div class="row">
                         <div class="col mb-4">
                             <label for="txtCategoria">Categoria</label>
-                            <input type="text" name="txtCategoria" id="txtCategoria" class="form-control" required>
+                            <select name="txtCategoria" id="txtCategoria" class="form-control" required>
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Outros">Outros</option>
+                            </select>
                         </div>
                         <div class="col mb-4">
                             <label for="txtData">Data</label>
@@ -84,10 +157,11 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="col">
                             <label for="txtValor">Valor</label>
-                            <input type="number" name="txtValor" id="txtValor" class="form-control" required>
+                            <input type="number" name="txtValor" id="txtValor" class="form-control" step="any" required>
                         </div>
                     </div>
                     <button type="submit" name="create_transaction" class="btn btn-primary mt-3 float-end">Salvar</button>
+                    <button type="button" class="btn btn-secondary mt-3 float-start" onclick="window.history.back()">Voltar</button>
                 </form>
             </div>
         </div>
