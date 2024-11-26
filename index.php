@@ -2,11 +2,9 @@
 session_start();
 require_once('connect.php');
 
-// Verifica se o formulário de cadastro foi enviado
 if (isset($_POST['add_month'])) {
     $month = $_POST['month'];
 
-    // Formatar a data para o primeiro dia do mês (YYYY-MM-01)
     $month_date = date('Y-m-01', strtotime($month));
 
     $sqlCheck = "SELECT * FROM month WHERE month_date = '$month_date'";
@@ -26,7 +24,6 @@ if (isset($_POST['add_month'])) {
     }
 }
 
-// Busca os dados dos meses e calcula as transações
 $sql = "SELECT * FROM month";
 $result = mysqli_query($conn, $sql);
 
@@ -82,8 +79,8 @@ if ($result->num_rows > 0) {
     <title>Relatório Financeiro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        /* Estilo do Botão Cadastrar Mês */
         #openModalButton {
             background-color: #32CD32;
             color: #ffffff;
@@ -98,7 +95,6 @@ if ($result->num_rows > 0) {
             transform: scale(1.05);
         }
 
-        /* Efeito Hover nos Cards */
         .card-hover-effect {
             transition: all 0.3s ease-in-out;
             border: 2px solid transparent;
@@ -109,6 +105,12 @@ if ($result->num_rows > 0) {
             border: 2px solid #32CD32;
             transform: scale(1.03);
             background-color: #333333;
+        }
+
+        footer .footer-divider {
+            border-top: 1px solid #444;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -235,6 +237,23 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+    <footer>
+            <hr class="my-4 text-secondary">
+            <div class="text-center mb-3">
+                <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+            <div class="text-center">
+                <p class="mb-0">&copy; <?= date('Y') ?> POBRETÃO - Todos os direitos reservados.</p>
+                <p class="mb-0">Desenvolvido por <a href="#" class="text-white text-decoration-none">Daniel Costa e Gustavo Henrique</a></p>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
