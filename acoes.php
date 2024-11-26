@@ -32,7 +32,6 @@ if (isset($_POST['edit_transaction'])) {
 
     $sql = "UPDATE transactions SET name = '{$name}', category = '{$category}', date = '{$date}', type = '{$type}', value = '{$value}' WHERE id = '{$transaction_id}'";
 
-    // $sql .= "WHERE id = '{$tarefaId}'";
 
     mysqli_query($conn, $sql);
 
@@ -46,4 +45,19 @@ if (isset($_POST['edit_transaction'])) {
 
     header("Location: historic.php?id=$month_id");
     exit;
+}
+
+
+if (isset($_POST['delete_transaction'])) {
+    $transaction_id = intval($_POST['delete_transaction']);
+
+    $sql = "DELETE FROM transactions WHERE id = $transaction_id";
+    if (mysqli_query($conn, $sql)) {
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "Erro ao excluir a transação.";
+    }
+} else {
+    echo "ID da transação não especificado.";
 }

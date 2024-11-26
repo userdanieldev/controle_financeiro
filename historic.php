@@ -39,6 +39,7 @@ if (isset($_GET['id'])) {
     <title>Histórico de Transações</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-dark text-white">
@@ -108,8 +109,52 @@ if (isset($_GET['id'])) {
                                     <td>R$ <?= number_format($transaction['value'], 2, ',', '.'); ?></td>
                                     <td><?= date('d/m/Y', strtotime($transaction['date'])); ?></td>
                                     <td>
-                                    <a href="editar_transacao.php?id=<?= $transaction['id'] /* ?>&month_id=<?= $transaction ['month_id'] */ ?>" class="btn btn-outline-warning btn-sm">Editar</a>
+                                    <a href="#editModal_<?= $transaction['id'] ?>" class="btn btn-sm btn-outline-warning" data-bs-toggle="modal">
+                                        Editar
+                                    </a>
+                                    <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal_<?= $transaction['id'] ?>">
+                                        Excluir
+                                    </button>
                                     </td>
+                                    <!-- Modal do Editar Transação -->
+                                    <div class="modal fade" id="editModal_<?= $transaction['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content bg-dark">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Confirmação</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body text-light">
+                                                    Prosseguir com a edição?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="editar_transacao.php?id=<?= $transaction['id']?>" id="confirmEditButton" class="btn btn-success"><i class="bi bi-check-circle-fill"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal do Excluir Transação -->
+                                <div class="modal fade" id="deleteModal_<?= $transaction['id'] ?>" tabindex="-1" aria-labelledby="deleteModalLabel_<?= $transaction['id'] ?>" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content bg-dark">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 text-light" id="deleteModalLabel_<?= $transaction['id'] ?>">Confirmação</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body text-light">
+                                                Prosseguir com a exclusão?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="acoes.php" method="POST">
+                                                    <input type="hidden" name="delete_transaction" value="<?= $transaction['id'] ?>">
+                                                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle-fill"></i></button>
+                                                </form>
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
