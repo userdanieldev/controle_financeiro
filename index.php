@@ -202,10 +202,6 @@ if ($result->num_rows > 0) {
                         </div>
                     </div>
                 </div>
-                <!-- Botão de exclusão no canto inferior esquerdo -->
-                <!-- <div class="mt-4 text-left">
-                    <a onclick="return confirm('Tem certeza que deseja excluir?')" href="delete_month.php?id=<?= $mes['id'] ?>" class="text-red-500 hover:text-red-700">Excluir</a>
-                </div> -->
                     <a onclick="return confirm('Tem certeza que deseja excluir?')" href="delete_month.php?id=<?= $mes['id'] ?>" class="btn btn-outline-danger btn-sm">Excluir</i></a>
                 </div>
             <?php endforeach; ?>

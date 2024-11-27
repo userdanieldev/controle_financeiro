@@ -134,11 +134,20 @@ if (isset($_GET['id'])) {
                         <div class="col mb-4">
                             <label for="txtCategoria">Categoria</label>
                             <select name="txtCategoria" id="txtCategoria" class="form-control" required>
-                                <option value="Alimentação">Alimentação</option>
-                                <option value="Transporte">Transporte</option>
-                                <option value="Lazer">Lazer</option>
-                                <option value="Saúde">Saúde</option>
-                                <option value="Outros">Outros</option>
+                            <option class="text-danger" disabled>Categorias de Saída</option>
+                                        <option value="Alimentação">Alimentação</option>
+                                        <option value="Transporte">Transporte</option>
+                                        <option value="Lazer">Lazer</option>
+                                        <option value="Saúde">Saúde</option>
+                                        <option value="Compras">Compras</option>
+                                        <option value="Outros">Educação</option>
+                                        <option value="Aplicação em Investimentos">Aplicação em Investimentos</option>
+                                        <option value="Serviços">Serviços</option>
+                                        <option class="text-success" disabled>Categorias de Entrada </option>
+                                        <option value="Renda">Renda</option>
+                                        <option value="Renda Extra">Renda Extra</option>
+                                        <option value="Rendimento de Investimentos">Rendimento de Investimentos</option>
+                                        <option value="Outros">Outros</option>
                             </select>
                         </div>
                         <div class="col mb-4">
@@ -151,8 +160,8 @@ if (isset($_GET['id'])) {
                         <div class="col">
                             <label for="txtTipo">Tipo</label>
                             <select name="txtTipo" id="txtTipo" class="form-control" required>
-                                <option value="Entrada">Entrada</option>
-                                <option value="Saida">Saída</option>
+                                <option class="text-success" value="Entrada">Entrada</option>
+                                <option class="text-danger" value="Saida">Saída</option>
                             </select>
                         </div>
                         <div class="col">
@@ -161,7 +170,7 @@ if (isset($_GET['id'])) {
                         </div>
                     </div>
                     <button type="submit" name="create_transaction" class="btn btn-primary mt-3 float-end">Salvar</button>
-                    <button type="button" class="btn btn-secondary mt-3 float-start" onclick="window.history.back()">Voltar</button>
+                    <button type="button" class="btn btn-outline-light mt-3 float-start" onclick="window.history.back()">Voltar</button>
                 </form>
             </div>
         </div>

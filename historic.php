@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
         <div class="d-flex justify-content-between align-items-center">
             <h1 class="text-white">Histórico de Transações</h1>
             <div>
-                <a href="index.php" class="btn btn-md mb-3 btn-secondary me-2">Voltar ao Resumo</a>
+                <a href="index.php" class="btn btn-md mb-3 btn-secondary me-2">Voltar ao Resumo Anual</a>
                 <a href="criar_transacao.php?id=<?= $month_id ?>" id="openModalButton" class="btn btn-md mb-3 btn-primary">
                     Cadastrar Transação
                 </a>
@@ -148,9 +148,9 @@ if (isset($_GET['id'])) {
                                             <div class="modal-footer">
                                                 <form action="acoes.php" method="POST">
                                                     <input type="hidden" name="delete_transaction" value="<?= $transaction['id'] ?>">
-                                                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle-fill"></i></button>
+                                                    <button type="submit" class="btn btn-outline-success"><i class="bi bi-check-circle-fill"></i></button>
                                                 </form>
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+                                                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
                                             </div>
                                         </div>
                                     </div>

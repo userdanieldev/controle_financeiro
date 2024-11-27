@@ -142,10 +142,19 @@ $month_end = date("Y-m-t", strtotime($month_start));
                                 <div class="mb-4">
                                     <label for="txtCategoria">Categoria</label>
                                     <select name="txtCategoria" id="txtCategoria" class="form-control" required>
+                                        <option class="text-danger" disabled>Categorias de Saída</option>
                                         <option value="Alimentação" <?= $transaction['category'] == 'Alimentação' ? 'selected' : '' ?>>Alimentação</option>
                                         <option value="Transporte" <?= $transaction['category'] == 'Transporte' ? 'selected' : '' ?>>Transporte</option>
                                         <option value="Lazer" <?= $transaction['category'] == 'Lazer' ? 'selected' : '' ?>>Lazer</option>
                                         <option value="Saúde" <?= $transaction['category'] == 'Saúde' ? 'selected' : '' ?>>Saúde</option>
+                                        <option value="Compras" <?= $transaction['category'] == 'Compras' ? 'selected' : '' ?>>Compras</option>
+                                        <option value="Outros" <?= $transaction['category'] == 'Outros' ? 'selected' : '' ?>>Educação</option>
+                                        <option value="Aplicação em Investimentos" <?= $transaction['category'] == 'Aplicação em Investimentos' ? 'selected' : '' ?>>Aplicação em Investimentos</option>
+                                        <option value="Serviços" <?= $transaction['category'] == 'Serviçoss' ? 'selected' : '' ?>>Serviços</option>
+                                        <option class="text-success" disabled>Categorias de Entrada </option>
+                                        <option value="Renda" <?= $transaction['category'] == 'Renda' ? 'selected' : '' ?>>Renda</option>
+                                        <option value="Renda Extra" <?= $transaction['category'] == 'Renda Extra' ? 'selected' : '' ?>>Renda Extra</option>
+                                        <option value="Rendimento de Investimentos" <?= $transaction['category'] == 'Rendimento de Investimentos' ? 'selected' : '' ?>>Rendimento de Investimentos</option>
                                         <option value="Outros" <?= $transaction['category'] == 'Outros' ? 'selected' : '' ?>>Outros</option>
                                     </select>
                                 </div>
@@ -154,8 +163,8 @@ $month_end = date("Y-m-t", strtotime($month_start));
                                     <div class="col">
                                         <label for="txtTipo">Tipo</label>
                                         <select name="txtTipo" id="txtTipo" class="form-control" required>
-                                            <option value="Entrada" <?= $transaction['type'] == 'Entrada' ? 'selected' : '' ?>>Entrada</option>
-                                            <option value="Saida" <?= $transaction['type'] == 'Saida' ? 'selected' : '' ?>>Saída</option>
+                                            <option class="text-success" value="Entrada" <?= $transaction['type'] == 'Entrada' ? 'selected' : '' ?>>Entrada</option>
+                                            <option class="text-danger" value="Saida" <?= $transaction['type'] == 'Saida' ? 'selected' : '' ?>>Saída</option>
                                         </select>
                                     </div>
                                     <div class="col">
@@ -171,7 +180,7 @@ $month_end = date("Y-m-t", strtotime($month_start));
 
                                 <div class="mb-4">
                                     <button type="submit" name="edit_transaction" class="btn btn-outline-primary float-end mt-3">Salvar</button>
-                                    <button type="button" class="btn btn-secondary mt-3 float-start" onclick="window.history.back()">Voltar</button>
+                                    <button type="button" class="btn btn-outline-light mt-3 float-start" onclick="window.history.back()">Voltar</button>
                                 </div>
                             </form>
                         </div>
