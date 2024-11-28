@@ -68,6 +68,6 @@ Organizar tarefas, resolver conflitos no código e utilizar ferramentas como **G
 ### Passos:
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-repositorio/pobretao.git
-
+[   git clone https://github.com/seu-repositorio/pobretao.git
+](https://github.com/userdanieldev/controle_financeiro.git)
 
