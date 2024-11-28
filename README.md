@@ -4,7 +4,7 @@
 
 O **POBRETÃO** é um sistema financeiro desenvolvido como parte do projeto acadêmico da disciplina **Desenvolvimento Web**, ministrada no curso de **Análise e Desenvolvimento de Sistemas** da **Universidade UNIMAR**. O sistema é voltado para auxiliar jovens, entre 18 e 30 anos, a organizarem suas finanças de forma eficiente, com uma interface moderna e responsiva.
 
-Este projeto foi elaborado por **Daniel Costa** e **Gustavo Henrique**, estudantes do primeiro termo, com o objetivo de consolidar conhecimentos teóricos e práticos adquiridos ao longo do curso, aplicando tecnologias atuais do desenvolvimento web.
+Este projeto foi elaborado por **Daniel Costa** e **Gustavo Henrique**, estudantes do segundo termo, com o objetivo de consolidar conhecimentos teóricos e práticos adquiridos ao longo do curso, aplicando tecnologias atuais do desenvolvimento web.
 
 ---
 
