@@ -68,6 +68,45 @@ Organizar tarefas, resolver conflitos no código e utilizar ferramentas como **G
 ### Passos:
 1. Clone este repositório:
    ```bash
-[   git clone https://github.com/seu-repositorio/pobretao.git
-](https://github.com/userdanieldev/controle_financeiro.git)
+   git clone https://github.com/userdanieldev/controle_financeiro.git
+
+
+## 📫 Contato dos Desenvolvedores
+
+- **Daniel Costa RA:1989218**  
+  [GitHub](https://github.com/userdanieldev) | [LinkedIn](https://www.linkedin.com/in/daniel-costa-b88a07198/)
+
+- **Gustavo Henrique RA:1992080**  
+  [GitHub](https://github.com/GuVieir4) | [LinkedIn](https://linkedin.com/in/gustavo-henrique-vieira-da-silva-6284b7231)
+
+---
+
+## ✨ Resultados e Conclusão
+
+Com o desenvolvimento do **POBRETÃO**, conseguimos:
+- Aplicar os conhecimentos de **Desenvolvimento Web** para criar um sistema funcional.
+- Aprimorar habilidades em **POO**, integração de tecnologias e design responsivo.
+- Desenvolver um projeto útil para a gestão financeira pessoal, com foco em jovens adultos.
+
+---
+
+## 📸 Imagens do Projeto
+
+![Tela Inicial do Sistema](./imagens/imagem1.png)  
+*O index do projeto, basicamente a Home*
+
+![Resumo Mensal](./imagens/imagem2.png)  
+*Descrição das transações mensais de forma detalhada*
+
+![Criar Transação](./imagens/imagem1.png)  
+*Tela de criação de transação*
+
+![Editar Transação](./imagens/imagem1.png)  
+*Tela que oferece a opção de editar as transações*
+
+---
+
+## 🎥 Vídeo do Projeto
+
+Assista ao vídeo demonstrativo do **POBRETÃO** no [YouTube](https://youtu.be/D8_cyyZpNB4).
 
