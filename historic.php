@@ -109,7 +109,7 @@ if (isset($_GET['id'])) {
                                     <td>R$ <?= number_format($transaction['value'], 2, ',', '.'); ?></td>
                                     <td><?= date('d/m/Y', strtotime($transaction['date'])); ?></td>
                                     <td>
-                                    <a href="#editModal_<?= $transaction['id'] ?>" class="btn btn-sm btn-outline-warning" data-bs-toggle="modal">
+                                    <a href="#editModal_<?= $transaction['id'] ?>" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal">
                                         Editar
                                     </a>
                                     <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal_<?= $transaction['id'] ?>">
@@ -128,8 +128,8 @@ if (isset($_GET['id'])) {
                                                     Prosseguir com a edição?
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="editar_transacao.php?id=<?= $transaction['id']?>" id="confirmEditButton" class="btn btn-success"><i class="bi bi-check-circle-fill"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+                                                    <a href="editar_transacao.php?id=<?= $transaction['id']?>" id="confirmEditButton" class="btn btn-outline-success"><i class="bi bi-check-circle-fill"></i></a>
+                                                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
                                                 </div>
                                             </div>
                                         </div>

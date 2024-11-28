@@ -120,7 +120,7 @@ if ($result->num_rows > 0) {
     <!-- Modal de Adicionar Mês -->
     <div class="modal fade" id="addMonthModal" tabindex="-1" aria-labelledby="addMonthModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-dark">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addMonthModalLabel">Adicionar Mês</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
@@ -131,7 +131,7 @@ if ($result->num_rows > 0) {
                             <label for="month" class="form-label">Selecione o Mês:</label>
                             <input type="month" class="form-control" id="month" name="month" required>
                         </div>
-                        <button type="submit" name="add_month" class="btn btn-primary">Adicionar</button>
+                        <button type="submit" name="add_month" class="btn btn-outline-primary">Adicionar</button>
                     </form>
                 </div>
             </div>
@@ -209,7 +209,7 @@ if ($result->num_rows > 0) {
 
         <!-- Botão de Cadastrar Mês -->
         <div class="text-center mt-8">
-            <button id="openModalButton" data-bs-toggle="modal" data-bs-target="#addMonthModal">Cadastrar Mês</button>
+            <button id="openModalButton" class="btn-outline"  data-bs-toggle="modal" data-bs-target="#addMonthModal">Cadastrar Mês</button>
         </div>
 
     </div>
