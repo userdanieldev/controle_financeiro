@@ -92,16 +92,16 @@ Com o desenvolvimento do **POBRETÃO**, conseguimos:
 
 ## 📸 Imagens do Projeto
 
-![Tela Inicial do Sistema](./imagens/imagem1.png)  
+![Tela Inicial do Sistema](./imagens/home.jpg)  
 *O index do projeto, basicamente a Home*
 
-![Resumo Mensal](./imagens/imagem2.png)  
+![Resumo Mensal](./imagens/resumo_mensal.jpg)  
 *Descrição das transações mensais de forma detalhada*
 
-![Criar Transação](./imagens/imagem1.png)  
+![Criar Transação](./imagens/criar.jpg)  
 *Tela de criação de transação*
 
-![Editar Transação](./imagens/imagem1.png)  
+![Editar Transação](./imagens/editar.jpg)  
 *Tela que oferece a opção de editar as transações*
 
 ---
